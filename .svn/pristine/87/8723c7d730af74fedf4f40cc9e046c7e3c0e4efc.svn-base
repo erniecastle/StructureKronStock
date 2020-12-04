@@ -1,0 +1,403 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kron Stock | El inspector de tus inversiones</title>
+        <!-- for-mobile-apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Barter Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <link rel="icon" type="image/png" href="imagesDesign/favicon.png" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- //for-mobile-apps -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- js -->
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <!-- //js -->
+        <link href='//fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        <!-- start-smoth-scrolling -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+            });
+        </script>
+        <!-- start-smoth-scrolling -->
+    </head>
+
+    <body>
+        <!-- header -->
+        <div class="header" id="ban">
+            <div class="container">
+                <div class="w3l_social_icons">
+                    <ul>
+                        <li><a href="#" class="facebook"></a></li>
+                        <li><a href="#" class="twitter"></a></li>
+                        <li><a href="#" class="google_plus"></a></li>
+                        <li><a href="#" class="pinterest"></a></li>
+                        <li><a href="#" class="instagram"></a></li>
+                    </ul>
+                </div>
+                <div class="w3ls_logo">
+                    <a href="index.html"></a>
+                </div>
+                <div class="header_right">
+                    <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <nav class="link-effect-7" id="link-effect-7">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="index.html" data-hover="Inicio">Inicio</a></li>
+                                    <li class="active act"><a href="about.html" data-hover="Acerca de">Acerca de</a></li>
+                                    <li><a href="portfolio.html" data-hover="¿Como invertir?">¿Como invertir?</a></li>
+                                    <li><a href="mail.html" data-hover="Contacto">Contacto</a></li>
+                                    <li><a href="login.html" data-hover="Ingresar">Ingresar</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //header -->
+        <!-- about -->
+        <div class="about">
+            <div class="container">
+                <h3>Acerca de</h3>
+                <ul>
+                    <li><a href="index.html">Portada</a><i>|</i></li>
+                    <li>Acerca de</li>
+                </ul>
+            </div>
+        </div>
+        <!-- //about -->
+        <!-- about-bottom -->
+        <div class="about-bottom">
+            <div class="container">
+                <div class="agileinfo_about_bottom_grids">
+                    <div class="col-md-6 agileinfo_about_bottom_grid">
+                        <h3>Acerca <span>de</span></h3>
+                        <p>Kron Stock nació a partir de una necesidad y nueva forma de invertir,
+                            todos los días estamos ligados y expuestos a nuevas necesidades que
+                            muchas veces nos hacen desconectarnos de cosas realmente importantes
+                            de la vida, algunos con más tiempo otros con menos tiempo, buscamos
+                            facilitar las inversiones con nuestro modelo, Muchas personas desconocen
+                            cómo invertir en el mundo fabuloso de la bolsa de valores, no necesitas
+                            ser un gran ejecutivo, empresario o multimillonario.
+                            Solo hace falta que tengas uso del conocimiento común para realizar la compra
+                            o venta de tu inversión, tratamos de analizar cada detalle del perfil del
+                            inversionista, asesorándote e introduciéndote en el mercado de valores.
+                        </p>
+                        <br>
+                        <p><b>Nuestras reglas básicas de inversión son:</b></p>
+                        <br>
+                        <p>- <b><i>Precio es lo que pagas, valor es lo que recibes.</i></b></p><br>
+                        <p>- <b><i>Si compras acciones, elígelas de la forma en que comprarías en la zona de
+                                    alimentación de un centro comercial y no como lo harías en la zona de perfumería.</i></b></p><br>
+                        <p>- <b><i>El éxito de una inversión no se puede explicar con una ecuación matemática o programa informático, es un arte.</i></b></p>
+                    </div>
+                    <div class="col-md-6 agileinfo_about_bottom_grid">
+                        <img src="images/7.jpg" alt=" " class="img-responsive" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //about-bottom -->
+        <!-- pricing-plans -->
+        <div class="pricing-plans">
+            <div class="container">
+                <h3><span>Nuestros</span> planes</h3>
+                <div class="pricing-grids">
+                    <div class="col-md-4 pricing-grid">
+                        <div class="price-value">
+                            <h4>Básico</h4>
+                            <h5>Excelente para principiantes</h5>
+                        </div>
+                        <div class="price-bg">
+                            <p class="price-label-1">$<span>50</span>anuales</p>							
+                            <ul class="count">
+                                <li><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 24/7 Tech Support</li>
+                                <li><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>Advanced Options</li>
+                                <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>200GB Storage</li>
+                                <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>3GB BandWidth</li>
+                            </ul>
+                            <p class="bottom">your business requires more than just a server or VPS you need a partner</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pricing-grid">
+                        <div class="price-value two">
+                            <h4>Plus</h4>
+                            <h5>Excelente para intermedios</h5>
+                        </div>
+                        <div class="price-bg">
+                            <p class="price-label-2">$<span>150</span>anuales</p>							
+                            <ul class="count">
+                                <li><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 24/7 Tech Support</li>
+                                <li><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>Advanced Options</li>
+                                <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>250GB Storage</li>
+                                <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>3GB BandWidth</li>
+                            </ul>
+                            <p class="bottom">your business requires more than just a server or VPS you need a partner</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pricing-grid">
+                        <div class="price-value three">
+                            <h4>Premium</h4>
+                            <h5>Excelente para avanzados</h5>
+                        </div>
+                        <div class="price-bg">
+                            <p class="price-label-3">$<span>200</span>anuales</p>							
+                            <ul class="count">
+                                <li><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 24/7 Tech Support</li>
+                                <li><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>Advanced Options</li>
+                                <li><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>300GB Storage</li>
+                                <li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>4GB BandWidth</li>
+                            </ul>
+                            <p class="bottom">your business requires more than just a server or VPS you need a partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //pricing-plans -->
+        <!-- team -->
+        <div class="team">
+            <div class="container">
+                <h3>Meet Out <span>Team</span></h3>
+                <div class="w3l_team_grids">
+                    <div class="col-md-3 w3l_team_grid">
+                        <div class="view view-second">
+                            <img src="images/6.jpg" alt=" " class="img-responsive" />
+                            <div class="mask"></div>
+                            <div class="content">
+                                <div class="w3l_social_icons w3l_social_icons1">
+                                    <ul>
+                                        <li><a href="#" class="facebook"></a></li>
+                                        <li><a href="#" class="twitter"></a></li>
+                                        <li><a href="#" class="google_plus"></a></li>
+                                        <li><a href="#" class="pinterest"></a></li>
+                                        <li><a href="#" class="instagram"></a></li>
+                                    </ul>
+                                </div>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                            </div>
+                        </div>
+                        <h4>Mariya Thomas</h4>
+                        <p>Business People</p>
+                    </div>
+                    <div class="col-md-3 w3l_team_grid">
+                        <div class="view view-second">
+                            <img src="images/9.jpg" alt=" " class="img-responsive" />
+                            <div class="mask"></div>
+                            <div class="content">
+                                <div class="w3l_social_icons w3l_social_icons1">
+                                    <ul>
+                                        <li><a href="#" class="facebook"></a></li>
+                                        <li><a href="#" class="twitter"></a></li>
+                                        <li><a href="#" class="google_plus"></a></li>
+                                        <li><a href="#" class="pinterest"></a></li>
+                                        <li><a href="#" class="instagram"></a></li>
+                                    </ul>
+                                </div>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                            </div>
+                        </div>
+                        <h4>Dino Jass</h4>
+                        <p>Business People</p>
+                    </div>
+                    <div class="col-md-3 w3l_team_grid">
+                        <div class="view view-second">
+                            <img src="images/8.jpg" alt=" " class="img-responsive" />
+                            <div class="mask"></div>
+                            <div class="content">
+                                <div class="w3l_social_icons w3l_social_icons1">
+                                    <ul>
+                                        <li><a href="#" class="facebook"></a></li>
+                                        <li><a href="#" class="twitter"></a></li>
+                                        <li><a href="#" class="google_plus"></a></li>
+                                        <li><a href="#" class="pinterest"></a></li>
+                                        <li><a href="#" class="instagram"></a></li>
+                                    </ul>
+                                </div>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                            </div>
+                        </div>
+                        <h4>Michael Doe</h4>
+                        <p>Business People</p>
+                    </div>
+                    <div class="col-md-3 w3l_team_grid">
+                        <div class="view view-second">
+                            <img src="images/10.jpg" alt=" " class="img-responsive" />
+                            <div class="mask"></div>
+                            <div class="content">
+                                <div class="w3l_social_icons w3l_social_icons1">
+                                    <ul>
+                                        <li><a href="#" class="facebook"></a></li>
+                                        <li><a href="#" class="twitter"></a></li>
+                                        <li><a href="#" class="google_plus"></a></li>
+                                        <li><a href="#" class="pinterest"></a></li>
+                                        <li><a href="#" class="instagram"></a></li>
+                                    </ul>
+                                </div>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+                            </div>
+                        </div>
+                        <h4>Rita James</h4>
+                        <p>Business People</p>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- //team -->
+        <!-- updates -->
+        <div class="updates-bottom">
+            <div class="container">
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">100</p> 
+                        <h3>Eficiencia</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">72</p>
+                        <h3>Ingresos pasivos</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">100</p> 
+                        <h3>Calidad</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">35090</p> 
+                        <h3>Popularidad</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+                <!-- Starts-Number-Scroller-Animation-JavaScript -->
+                <script src="js/waypoints.min.js"></script> 
+                <script src="js/counterup.min.js"></script> 
+                <script>
+                    jQuery(document).ready(function($) {
+                    $('.counter').counterUp({
+                    delay: 20,
+                    time: 1000
+                    });
+                    });
+                </script>
+
+                <!-- //Starts-Number-Scroller-Animation-JavaScript -->
+            </div>
+        </div>
+        <!-- //updates -->
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <h2>Suscríbete a<span>nuestro boletín</span></h2>
+                <form action="#" method="post">
+                    <input type="email" name="Email" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {
+                                this.value = 'Email...';
+                            }" required="">
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <div class="container">
+                <div class="w3agile_footer_grids">
+                    <div class="col-md-4 w3agile_footer_grid">
+                        <h3>Acerca de</h3>
+                        <p>Kron Stock una forma de facilitar las inversiones, sin invertir demasiado tiempo para analizar la compra o venta de acciones.
+                            <span>Trabajando en conjunto con nuestra plataforma para invertir de una manera más eficaz y factible en el menor tiempo posible.</span></p>
+                    </div>
+                    <div class="col-md-4 w3agile_footer_grid">
+                        <h3>Datos de contacto</h3>
+                        <ul>
+                            <!-- <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>-->
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@kronstock.com">info@kronstock.com</a></li>
+                            <!--<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
+                        <h3>Navegación</h3>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="index.html">Inicio</a></li>
+                            <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="portfolio.html">¿Como invertir?</a></li>
+                            <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="mail.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right-social">
+            <div class="container">
+                <div class="footer-pos">
+                    <a href="#ban" class="scroll"><img src="images/arrow.png" alt=" " class="img-responsive" /></a>
+                </div>
+                <div class="copy-right">
+                    <p>Copyright &copy; 2017 KronStock.</p>
+                </div>
+                <div class="copy-right-social1">
+                    <div class="w3l_social_icons w3l_social_icons1">
+                        <ul>
+                            <li><a href="#" class="facebook"></a></li>
+                            <li><a href="#" class="twitter"></a></li>
+                            <li><a href="#" class="google_plus"></a></li>
+                            <li><a href="#" class="pinterest"></a></li>
+                            <li><a href="#" class="instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //footer -->
+        <!-- for bootstrap working -->
+        <script src="js/bootstrap.js"></script>
+        <!-- //for bootstrap working -->
+    </body>
+</html>

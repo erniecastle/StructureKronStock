@@ -1,0 +1,251 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (empty($_SESSION['myusername'])) {
+    header("location:login.html");
+}
+include ("designer/query.php");
+include ("designer/functions.php");
+$rol = 0;
+$verify = 0;
+?>
+
+<html>
+    <head>
+        <?php echo '<title>' . nameweb . ' - ' . lema . '</title>'; ?>
+        <meta name="description" content="Invest es una aplicación que te ayuda a invertir en bolsa" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- <link rel="icon" type="image/png" href="imagesDesign/favicon.png" />-->
+
+        <!-- end google fonts -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/functionsNotifier.js"></script>
+
+        <script type="text/javascript">
+            $(window).load(function() {
+                ChangeOn(1);
+                ListenMe();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- start header -->
+        <div id="header">
+            <div class="inner">
+                <div class="logo">
+                    <a href="index.html"></a>
+                </div> 
+                <div class="cssmenu">
+                    <ul>
+                        <div class="userLogin">
+                            <a>Bienvenido: <?php echo $_SESSION["myusername"]; ?></a>
+                        </div>
+                        <?php
+//                    if ($rol <= 2) {
+//
+//                        if ($verify > 0) {
+//                            echo'<li title="Notificaciones" class="glove fb" id="notification_li">';
+//                            echo '<span id="notification_count">' . $verify . '</span>';
+//                            echo '<a href="#" id="notificationLink"></a>';
+//                            echo '</li>';
+//                            echo '<div id="notificationContainer">';
+//                            echo '<div id="notificationTitle">Notificaciones</div>';
+//                            echo '<div id="notificationsBody" class="notifications">';
+//                            $registros = getRegisters("select clave from `mainpost` WHERE `mainpost`.showPost=2");
+//                            while ($reg = mysql_fetch_array($registros)) {
+//                                echo '<div id="notifications">Verificar articulo clave: ' . $reg['clave'] . '</div>';
+//                            }
+//                            echo '<div id="notificationFooter"><a href="articulos.php">Verificar articulos</a></div>';
+//                            echo '</div>';
+//                            echo '</div>';
+//                        }
+//                    }
+                        ?>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <!-- start menu responsive -->
+            <nav class="clearfix">
+                <ul id="clearfix" class="clearfix">
+                    <li><a href="stocks.php">Listado de acciones</a></li>
+                    <li><a href="stock.php">Asignar acción</a></li>
+                    <li><a href="mystocks.php">Inversiones</a></li>
+                    <?php
+                    if ($rol < 4) {
+                        
+                    }
+                    if ($rol == 1 || $rol == 2 || $rol == 4) {
+
+                        echo ' <li><a href="visitas.html">Visitas</a></li>';
+                        echo ' <li><a  href="medidores.php">KPI\'s</a></li>';
+                        if ($rol <= 2) {
+                            echo ' <li><a href="usuarios.php">Usuarios</a></li>';
+                        }
+                        echo '<li><a href="group.php">Grupos</a></li>';
+                    }
+                    if ($rol < 3) {
+                        //echo '<li><a type="application/rss+xml" href="feed.php">RSS</a></li>';
+                    }
+                    if ($rol == 1) {
+                        echo '<li><a href="userpost.php">Reformar</a></li>';
+                    }
+                    //echo ' <li><a href="pdf/Manualcolaborador.pdf">Manual</a></li>';
+                    ?>
+                    <li><a href="logout.php">Cerrar Sesión</a></li>
+                </ul>
+                <a  id="pull">Menu</a>
+            </nav>
+            <!--End menu responsive -->
+        </div>
+        <!--End header-->
+
+    </div>
+    <!-- start main -->
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="main" style="margin-top: 1%;">
+                <div class="content">
+                    <div class="grids_of_2">
+                        <h2 id="content">Condiciones de alerta</h2>
+                        <div class="artical-commentbox">
+                            <a class="myButton" style="margin-right: 3%;" href="javascript:void(0);" onclick="ChangeOn(1);
+                                    return false;" >Agregar</a>
+                            <a class="myButton" style="margin-right: 3%;" href="javascript:void(0);" onclick="ChangeOn(2);
+                                    return false;" >Modificar</a>
+                            <a class="myButton" style="margin-right: 3%;" href="javascript:void(0);" onclick="ChangeOn(3);
+                                    return false;" >Eliminar</a>
+                            <br><br><br>
+                        </div>
+                        <a id="mode" value="a">Modo: Agregar</a>
+                        <div class="artical-commentbox" >
+                            <p id="errorComment" class="error-Comment00" style="display: none"></p>
+                            <div id="reply00" class="table-form">
+                                <form id="commentForm" onsubmit="return checkData();"
+                                      enctype="multipart/form-data"
+                                      action="designer/notifierFunctions.php" method="post" name="changer">
+                                    <input name="MAX_FILE_SIZE" value="" type="hidden">
+                                    <label>No. de inversión:</label>
+                                    <input id="textKey" title="No. inversión" name="textKey" type="textKey" class="textbox" value="" 
+                                           onfocus="if (this.value == 'No. inversión') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value == '') {
+                                                       this.value = 'No. inversión';
+                                                   }
+                                           " >
+                                    <button id="identifier" title="Busqueda de inversión" type="button"  href="javascript:void(0);" onclick="whatDo(1);
+                                            return false;"><img src="images/loupe.png" /></button>
+                                    <br>
+                                    <label>Simbolo de stock: </label>
+                                    <input id="textKeyStock" title="Simbolo de stock" name="textKeyStock" type="textKey" class="textbox" value="Simbolo de stock" 
+                                           onfocus="if (this.value == 'Simbolo de stock') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value == '') {
+                                                       this.value = 'Simbolo de stock';
+                                                   }
+                                           " >
+                                    <button id="identifierStock" title="Busqueda de accion" type="button"  href="javascript:void(0);" onclick="whatDo(15);
+                                            return false;"><img src="images/loupe.png" /></button>
+                                    <br>
+                                    <input id="priceStock" name="priceStock" type="text" title="El precio actual al que compraste la acción" class="textsmallbox" value="Precio de compra" 
+                                           onfocus="if (this.value === 'Precio de compra') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value === '') {
+                                                       this.value = 'Precio de compra';
+                                                   }"><br>
+                                    <input id="textTitleStock" name="textTitleStock" type="text" class="textbox" value="Nombre de la compañia" disabled="disabled"
+                                           onfocus="if (this.value === 'Nombre de la compañia') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value === '') {
+                                                       this.value = 'Nombre de la compañia';
+                                                   }">
+                                    <br>
+                                    <label>Cantidad de stocks (opcional): </label>
+                                    <input id="textBoughtStocks" name="textBoughtStocks" type="number"  min="0" step="1" value="0">
+                                    <br>
+                                    <input id="textBuyLimit" name="textBuyLimit" type="text" title="El precio en el que recibiras notificación" class="textLimit" value="Notificador valor de compra" 
+                                           onfocus="if (this.value === 'Notificador valor de compra') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value === '') {
+                                                       this.value = 'Notificador valor de compra';
+                                                   }">
+                                    <label>◄►</label>
+                                    <input id="textSellsLimit" name="textSellsLimit" title="El precio en el que recibiras notificación" type="text" class="textSellsLimit" value="Notificador valor de venta" 
+                                           onfocus="if (this.value === 'Notificador valor de venta') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value === '') {
+                                                       this.value = 'Notificador valor de venta';
+                                                   }">
+                                    <br>
+                                    <br>
+
+                                    <label class="checks">Aproximaciones (opcional):</label><br>
+                                    <label>A la compra</label>
+                                    <input id="percentageBuy"  name="percentageBuy" type="range"  min="0" max="100" value="1"
+                                           oninput="amountB.value=percentageBuy.value">                                                       
+                                    <output id="amountB" name="amountB" id="amountB" for="percentageBuy">100</output>% 
+                                    <label>A la venta</label>
+                                    <input id="percentageSell"  name="percentageSell" type="range"  min="0" max="100" value="1"
+                                           oninput="amountS.value=percentageSell.value">                                                       
+                                    <output id="amountS" name="amountS" id="amountS" for="percentageSell">100</output>% 
+                                    <br>
+                                    <br>
+                                    <label class="checks">Recibir notificación valor de compra</label>
+                                    <input id="notifierBuy" name="notifierBuy" type="checkbox" checked>&nbsp;&nbsp;
+                                    <label class="checks">Recibir notificación valor de venta</label>
+                                    <input id="notifierSell" name="notifierSell" type="checkbox" checked>
+                                    <br><br>
+                                    <label class="checks">Recibir notificación aproximación de compra</label>
+                                    <input id="notifierAppBuy" name="notifierAppBuy" type="checkbox" checked>&nbsp;&nbsp;
+                                    <label class="checks">Recibir notificacion aproximación de venta</label>
+                                    <input id="notifierAppSell" name="notifierAppSell" type="checkbox" checked>
+                                    <br>
+                                    <input id="workaholic" name="toDo" value="I" type="hidden">
+                                    <input id="stockcold" name="stockcold" value="" type="hidden">
+                                    <input id="takeit" name="takeit" value="" type="hidden">
+                                    <?php
+                                    if ($rol < 3) {
+                                        echo '<input id="myBtnS"  value="Guardar" class="myButton" type="submit"Guardar>';
+                                    }
+                                    ?>
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>			
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- start footer -->
+    <div class="wrap">
+        <div class="footer">
+
+            <div class="foot_soc">
+                <ul>
+                    <li><a class="icon1" href="https://instagram.com/<?php echo instagram ?>"></a></li>
+                    <li><a  class="icon2" href="https://www.facebook.com/<?php echo facebook ?>"></a></li>
+                    <li><a  class="icon4" href="https://plus.google.com/<?php echo googleplus ?>"></a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="legend">	
+                <p class="Disegnato">"Invierte ahora, disfruta de tus ganancias mañana" &nbsp; <a href="acercade.html"><?php echo nameweb ?></a></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+

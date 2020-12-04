@@ -1,0 +1,79 @@
+<?php
+
+session_start();
+include ("../designer/query.php");
+include ("../designer/functions.php");
+
+$tbl_name = "members"; // Table name 
+// Connect to server and select databse.
+$conn = mysql_connect(host, glb::get('userdb'), pw);
+
+//if (!$conn) {
+//    die('Could not connect to Data: %s\n' . mysqli_connect_error());
+//    exit();
+//} else {
+//    mysql_query("SET character_set_results=utf8", $conn);
+//    mysql_select_db(db, $conn) or die("Problems to conect db");
+// username and password sent from form 
+$myusername = $_POST['txtuser'];
+$mypassword = $_POST['txtpass'];
+// To protect MySQL injection (more detail about MySQL injection)
+$myusername = stripslashes($myusername);
+$mypassword = stripslashes($mypassword);
+$myusername = mysql_real_escape_string($myusername);
+$mypassword = mysql_real_escape_string($mypassword);
+//session_name("autentificado");  
+$sql = "SELECT * FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
+
+$result = getUnique($sql);
+// Mysql_num_row is counting table row
+//$count = mysql_fetch_assoc($result);
+//mysql_num_rows($result);
+// If result matched $myusername and $mypassword, table row must be 1 row
+if (isset($result) && !empty($result)) {
+    //Register $myusername, $mypassword and redirect to file "login_success.php"
+    //$_SESSION['autentificado']= ""; 
+    $_SESSION["myusername"] = $result['nombre'];
+    $_SESSION["iduser"] = $result['id'];
+    $_SESSION["rol"] = $result['rol'];
+    //$_SESSION["mypassword"] = $mypassword;
+    ob_end_flush();
+    //session_register("myusername");
+    // header('refresh:1; url=../login_success.php');
+    //header("location:../login_success.php");
+    //header("Location: login_success.php");
+    $kindServer = $_SERVER['HTTP_HOST'];
+    $HostName = 'www.' . nameweb . '.com';
+
+    if ($kindServer == $HostName) {
+        if ($result['rol'] >= 1 && $result['rol'] < 4) {
+            echo"<script language='javascript'>window.location='../posteo'</script>;";
+        } else if ($result['rol'] > 3) {
+            echo"<script language='javascript'>window.location='../visitas'</script>;";
+        }
+    } else {
+        if ($result['rol'] >= 1 && $result['rol'] < 4) {
+            echo"<script language='javascript'>window.location='../posteo.php'</script>;";
+        } else if ($result['rol'] > 3) {
+            echo"<script language='javascript'>window.location='../visitas.html'</script>;";
+        }
+    }
+    $sql = "UPDATE FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
+
+    $id = $_SESSION["iduser"];
+    $sql = "UPDATE $tbl_name SET lasLog = NOW() WHERE id = '$id' ";
+    update($sql);
+} else {
+    // echo"<script language='javascript'>window.location='../login.php'</script>;";
+    //header('refresh:1; url=/../Blog/web/login.html');
+    // header('refresh:1; url=../login.html');
+    echo"<script language='javascript'> window.setTimeout(function(){window.location.href = '../login.html';}, 1000);</script>";
+    echo " <h3>El usuario o Password son Incorrectos </h3>";
+    echo " <img src='../images/reply.png' style='float:left;'/>";
+    echo " <h2>Vuelva a intentarlo </h2>";
+}
+//  mysql_close();
+//}
+?>
+
+

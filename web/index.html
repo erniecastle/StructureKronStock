@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kron Stock | El inspector de tus inversiones</title>
+        <!-- for-mobile-apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="" />
+        <link rel="icon" type="image/png" href="imagesDesign/favicon.png" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <!-- //for-mobile-apps -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- js -->
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <!-- //js -->
+        <link href='//fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+        <!-- start-smoth-scrolling -->
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+            });
+        </script>
+        <!-- start-smoth-scrolling -->
+    </head>
+
+    <body>
+        <!-- header -->
+        <div class="header" id="ban">
+            <div class="container">
+                <div class="w3l_social_icons">
+                    <ul>
+                        <li><a href="#" class="facebook"></a></li>
+                        <li><a href="#" class="twitter"></a></li>
+                        <li><a href="#" class="google_plus"></a></li>
+                        <li><a href="#" class="pinterest"></a></li>
+                        <li><a href="#" class="instagram"></a></li>
+                    </ul>
+                </div>
+                <div class="w3ls_logo">
+                    <a href="index.html"></a>
+                </div>
+                <div class="header_right">
+                    <nav class="navbar navbar-default">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <nav class="link-effect-7" id="link-effect-7">
+                                <ul class="nav navbar-nav">
+                                    <li class="active act"><a href="index.html" data-hover="Inicio">Inicio</a></li>
+                                    <li><a href="about.html" data-hover="Acerca de">Acerca de</a></li>
+                                    <li><a href="portfolio.html" data-hover="¿Como invertir?">¿Como invertir?</a></li>
+                                    <li><a href="mail.html" data-hover="Contacto">Contacto</a></li>
+                                    <li><a href="login.html" data-hover="Ingresar">Ingresar</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //header -->
+        <!-- banner -->
+        <div class="banner">
+            <div class="container">
+                <div class="wthree_banner_info">
+                    <section class="slider">
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <p>Monitorea tus inversiones...</p>
+                                        <h3>¿Quieres invertir sin perder tu tiempo?</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <p>Invierte en cualquier stock de tu preferencia</p>
+                                        <h3>Kron Stock te indica cuando comprar y vender tus acciones</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wthree_banner_info_grid">
+                                        <p>¡Tu manejas tu propio dinero!</p>
+                                        <h3>Te asesoramos y te notificamos de el mejor momento para invertir</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- flexSlider -->
+                    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" property="" />
+                    <script defer src="js/jquery.flexslider.js"></script>
+                    <script type="text/javascript">
+                        $(window).load(function() {
+                        $('.flexslider').flexslider({
+                        animation: "slide",
+                        start: function(slider) {
+                        $('body').removeClass('loading');
+                        }
+                        });
+                        });
+                    </script>
+                    <!-- //flexSlider -->
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
+        <!-- banner-bottom -->
+        <div class="banner-bottom">
+            <div class="container">
+                <div class="agile_banner_bottom_grids">
+                    <div class="col-md-3 agile_banner_bottom_grid">
+                        <div class="agile_banner_bottom_grid1 hvr-rectangle-out">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                        </div>
+                        <h3>Haz una lista de las acciones por las cuales tienes interés</h3>
+                    </div>
+                    <div class="col-md-3 agile_banner_bottom_grid">
+                        <div class="agile_banner_bottom_grid1 hvr-rectangle-out">
+                            <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                        </div>
+                        <h3>Analiza las altas y bajas de los stocks durante el año</h3>
+                    </div>
+                    <div class="col-md-3 agile_banner_bottom_grid">
+                        <div class="agile_banner_bottom_grid1 hvr-rectangle-out">
+                            <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
+                        </div>
+                        <h3>Invierte tu dinero en cualquier trading de tu preferencia</h3>
+                    </div>
+                    <div class="col-md-3 agile_banner_bottom_grid">
+                        <div class="agile_banner_bottom_grid1 hvr-rectangle-out">
+                            <span class="glyphicon glyphicon-export" aria-hidden="true"></span>
+                        </div>
+                        <h3>Ingresa a la plataforma y realiza tus inversiones con notificaciones</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- //banner-bottom -->
+        <!-- welcome -->
+        <div class="welcome">
+            <div class="container">
+                <div class="col-md-6 agileits_welcome_grid_left">
+                    <h2>Kron Stock</h2>
+                    <p>Es una aplicación que puedes usar para realizar tus inversiones,
+                        sin necesidad de perder tanto tiempo, solo tú eliges la acción que deseas monitorear,
+                        “Kron Stock” se encargara de monitorearla segundo tras segundo y notificarte
+                        cuando es el mejor momento para comprar o vender tus inversiones realizadas,
+                        facilitándote así la fatiga total de perder tiempo y verificar día con día
+                        si es buen momento para invertir en la acción deseada de tu interés. 
+                        <i>Te asesoramos si desconoces como invertir en la bolsa, no manejamos tu dinero,
+                            solo te ayudamos a saber invertirlo y conocer mejor el mercado de valores,
+                            para que puedas realizar tus actividades diarias sin descuidar tu familia
+                            o labores principales que enfrentas con el día a día.</i></p>
+                </div>
+                <div class="col-md-6 agileits_welcome_grid_right">
+                    <img src="images/1.jpg" alt=" " class="img-responsive" />
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //welcome -->
+        <!-- welcome-bottom -->
+        <div class="welcome-bottom">
+            <div class="container">
+                <h3>El dinero siempre está ahí; sólo cambia de bolsillos.</h3>
+                <p>El camino hacia la riqueza depende fundamentalmente de dos palabras: trabajo, ahorro e inversiones </p>
+                <div class="more">
+                    <a href="single.html" class="hvr-bounce-to-top">Leer Más</a>
+                </div>
+            </div>
+        </div>
+        <!-- //welcome-bottom -->
+        <!-- updates -->
+        <div class="updates">
+            <div class="container">
+                <div class="agileits_updates_grids">
+                    <div class="col-md-6 agileits_updates_grid_left">
+                        <h3>Nuestros <span>Servicios</span></h3>
+                        <ul id="flexiselDemo1">			
+                            <li>
+                                <img src="images/1.jpg" alt=" " class="img-responsive" />
+                            </li>
+                            <li>
+                                <img src="images/3.jpg" alt=" " class="img-responsive" />
+                            </li>
+                            <li>
+                                <img src="images/4.jpg" alt=" " class="img-responsive" />
+                            </li>
+                        </ul>
+                        <script type="text/javascript">
+                            $(window).load(function() {
+                            $("#flexiselDemo1").flexisel({
+                            visibleItems: 3,
+                            animationSpeed: 1000,
+                            autoPlay: true,
+                            autoPlaySpeed: 3000,
+                            pauseOnHover: true,
+                            enableResponsiveBreakpoints: true,
+                            responsiveBreakpoints: {
+                            portrait: {
+                            changePoint: 480,
+                            visibleItems: 1
+                            },
+                            landscape: {
+                            changePoint: 640,
+                            visibleItems: 2
+                            },
+                            tablet: {
+                            changePoint: 768,
+                            visibleItems: 3
+                            }
+                            }
+                            });
+
+                            });
+                        </script>
+                        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title asd">
+                                        <a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Asesoría en inversiones
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body panel_text">
+                                        Te asesoramos de manera estratégica si nunca has invertido en la bolsa de valores, otorgándote los instrumentos de inversión necesarios para que comiences a invertir tu dinero de una manera relajada y amena.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title asd">
+                                        <a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Reconocimiento de perfil inversionista
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body panel_text">
+                                        Todas las personas tenemos un perfil de inversionista diferente, es por ello que evaluamos tu persona en base a un estudio con el fin de reconocer el perfil y te mantengas constantemente invirtiendo en el mercado de valores sin el menor riesgo alguno.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title asd">
+                                        <a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Formación de traders
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body panel_text">
+                                        Te formamos como trader para que comiences a comprar o vender instrumentos financieros (acciones, bonos, materias primas, derivados financieros, etc.), con el fin de obtener una rentabilidad en el menor tiempo posible.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingFour">
+                                    <h4 class="panel-title asd">
+                                        <a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Capacitación para usar el sistema Kron
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body panel_text">
+                                        Accesibilidad para utilizar el sistema Kron, el cual te permitirá monitorear tus inversiones realizadas de diferentes tipos de Stocks en el mundo del mercado de valores.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 agileits_updates_grid_right">
+                        <h3>Últimas <span>actualizaciones </span></h3>
+                        <div class="agileits_updates_grid_left_grid">
+                            <div class="col-xs-4 agileits_updates_grid_left1">
+                                <h4>15 <span>◠ᴥ◠ <i>2016.</i></span></h4>
+                            </div>
+                            <div class="col-xs-8 agileits_updates_grid_left1">
+                                <h5><a href="single.html">El mundo de las inversiones</a></h5>
+                                <p>Si nunca has estado realizando ningun tipo de inversión...</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="agileits_updates_grid_left_grid">
+                            <div class="col-xs-4 agileits_updates_grid_left1">
+                                <h4>18 <span>◠ᴥ◠ <i>2016.</i></span></h4>
+                            </div>
+                            <div class="col-xs-8 agileits_updates_grid_left1">
+                                <h5><a href="single.html">Historia detrás de wall street</a></h5>
+                                <p>Muchos son los que piensan que detrás de 8 decadas...</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="agileits_updates_grid_left_grid">
+                            <div class="col-xs-4 agileits_updates_grid_left1">
+                                <h4>20 <span>◠ᴥ◠ <i>2016.</i></span></h4>
+                            </div>
+                            <div class="col-xs-8 agileits_updates_grid_left1">
+                                <h5><a href="single.html">¿Que es un stock?</a></h5>
+                                <p>Hace referencia al nombre asignado de cada valor en la compañia...</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <!-- //updates -->
+        <!-- updates-bottom -->
+        <div class="updates-bottom">
+            <div class="container">
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">100</p> 
+                        <h3>Eficiencia</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                         <p class="counter">72</p>
+                        <h3>Ingresos pasivos</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">100</p> 
+                        <h3>Calidad</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="col-md-3 w3_updates_bottom_grid">
+                    <div class="w3_updates_bottom_grid_left">
+                        <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+                    </div>
+                    <div class="w3_updates_bottom_grid_right">
+                        <p class="counter">35090</p> 
+                        <h3>Popularidad</h3>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+                <!-- Starts-Number-Scroller-Animation-JavaScript -->
+                <script src="js/waypoints.min.js"></script> 
+                <script src="js/counterup.min.js"></script> 
+                <script>
+                    jQuery(document).ready(function($) {
+                    $('.counter').counterUp({
+                    delay: 20,
+                    time: 1000
+                    });
+                    });
+                </script>
+                <!-- //Starts-Number-Scroller-Animation-JavaScript -->
+            </div>
+        </div>
+        <!-- //updates-bottom -->
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <h2>Suscríbete a<span>nuestro boletín</span></h2>
+                <form action="#" method="post">
+                    <input type="email" name="Email" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {
+                                this.value = 'Email...';
+                            }" required="">
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <div class="container">
+                <div class="w3agile_footer_grids">
+                    <div class="col-md-4 w3agile_footer_grid">
+                        <h3>Acerca de</h3>
+                        <p>Kron Stock una forma de facilitar las inversiones, sin invertir demasiado tiempo para analizar la compra o venta de acciones.
+                            <span>Trabajando en conjunto con nuestra plataforma para invertir de una manera más eficaz y factible en el menor tiempo posible.</span></p>
+                    </div>
+                    <div class="col-md-4 w3agile_footer_grid">
+                        <h3>Datos de contacto</h3>
+                        <ul>
+                           <!-- <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>-->
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@kronstock.com">info@kronstock.com</a></li>
+                            <!--<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
+                        <h3>Navegación</h3>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="about.html">Acerca de</a></li>
+                            <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="portfolio.html">¿Como invertir?</a></li>
+                            <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="mail.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right-social">
+            <div class="container">
+                <div class="footer-pos">
+                    <a href="#ban" class="scroll"><img src="images/arrow.png" alt=" " class="img-responsive" /></a>
+                </div>
+                <div class="copy-right">
+                    <p>Copyright &copy; 2017 KronStock.</p>
+                </div>
+                <div class="copy-right-social1">
+                    <div class="w3l_social_icons w3l_social_icons1">
+                        <ul>
+                            <li><a href="#" class="facebook"></a></li>
+                            <li><a href="#" class="twitter"></a></li>
+                            <li><a href="#" class="google_plus"></a></li>
+                            <li><a href="#" class="pinterest"></a></li>
+                            <li><a href="#" class="instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //footer -->
+        <!-- for bootstrap working -->
+        <script src="js/bootstrap.js"></script>
+        <!-- //for bootstrap working -->
+    </body>
+</html>

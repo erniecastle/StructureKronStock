@@ -1,0 +1,56 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of meYahoo
+ *
+ * @author Invest!
+ */
+//$functions = new meYahoo();
+//$var = $functions->getCompany('AAPL');
+////$json = json_decode($var);
+////$var = json_decode($var);
+//
+//echo $var;
+//$manage = (array) $var->query->results->quote;
+
+
+class meYahoo {
+
+    function getCompany($symbolKey) {
+        $is_array = is_array($symbolKey);
+        $imp_symbol = ($is_array) ? implode('%22%2C%22', $symbolKey) : $symbolKey;
+        $manage = $this->getResultFromYQL($imp_symbol);
+        $manage = (array) $manage->query->results->quote;
+        return $manage['Name'];
+        // return $manage[14]->AverageDailyVolume;
+        //echo print_r($manage[0]->AverageDailyVolume);
+    }
+
+    function getStocksValues($symbolKey) {
+        $is_array = is_array($symbolKey);
+        $imp_symbol = ($is_array) ? implode('%22%2C%22', $symbolKey) : $symbolKey;
+        $manage = $this->getResultFromYQL($imp_symbol);
+        $manage = (array) $manage->query->results->quote;
+        return $manage;
+        // return $manage[14]->AverageDailyVolume;
+        //echo print_r($manage[0]->AverageDailyVolume);
+    }
+
+    private function getResultFromYQL($simbols) {
+        $yql_query_url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from"
+                . "%20yahoo.finance.quote%20where%20symbol%20IN%20(%22$simbols%22)&diagnostics=false"
+                . "&format=json&env=http://datatables.org/alltables.env";
+        $session = curl_init($yql_query_url);
+        curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+        $json = curl_exec($session);
+        curl_close($session);
+        return json_decode($json);
+    }
+
+}

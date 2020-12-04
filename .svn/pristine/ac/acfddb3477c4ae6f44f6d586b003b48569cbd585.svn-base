@@ -1,0 +1,43 @@
+<?php
+
+echo date("h:i:s A");
+$cars = array
+    (
+    array("Volvo", 22, 18),
+    array("BMW", 15, 13),
+    array("Land Rover", 17, 15),
+    array("Saab", 5, 2),
+    array("Land Rover", 17, 15),
+);
+
+
+
+
+$S1 = array("Aston", 80, 40);
+
+array_push($cars, $S1);
+
+sort($cars); //Ordenaria por usuario
+
+$kindStock = "";
+for ($row = 0; $row < count($cars); $row++) {
+
+    if ($kindStock != $cars[$row][0]) {
+        echo "<p><b>Stock de" . $cars[$row][0] . " </b></p>";
+    }
+
+    // echo "<ul>";
+    for ($col = 0; $col < 3; $col++) {
+        echo "<li>" . $cars[$row][$col] . "</li>";
+    }
+}
+//echo "</ul>";
+
+
+//$values = array_push_assoc($values, "stockImage", "$keyMi");
+
+//echo '<pre>';
+//print_r($cars);
+//echo '</pre>';
+
+echo date("h:i:s A");

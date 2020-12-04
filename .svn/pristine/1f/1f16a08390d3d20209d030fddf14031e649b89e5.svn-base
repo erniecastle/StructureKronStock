@@ -1,0 +1,40 @@
+<?php
+
+include ("designer/queryLi.php");
+include ("designer/meYahoo.php");
+$loadQli = new queryLi();
+$loadYql = new meYahoo();
+
+//start here
+$sql = "SELECT * FROM `stocks` order by stockSymbol asc";
+$data = $loadQli->select($sql);
+
+$storeStocks = array();
+
+if ($data == false) {
+    echo json_encode("Error getdata() :" . mysql_error());
+} else {
+    if ($data->num_rows > 0) {
+        $keyStocks = array();
+        while ($row = $data->fetch_assoc()) {//Extract stocks and update Last-Price
+            $keyStocks[] = $row["stockSymbol"];
+        }
+        $values = $loadYql->getStocksValues($keyStocks);
+        if ($values != null) {
+            foreach ($values as $row) {
+                $wasUpdate = $loadQli->update('stocks', array('lastPrice' => $row->LastTradePriceOnly), array('%d'), array('stockSymbol' => $row->Symbol), array('%s'));
+                if (true) {//array('lastPrice' => $row->LastTradePriceOnly, 'otherthing' => 'good');
+                    $storeStocks[$row->Symbol] = array('lastPrice' => $row->LastTradePriceOnly);
+                }
+            }
+        }
+    }
+}
+
+
+/*
+i 	la variable correspondiente es de tipo entero
+d 	la variable correspondiente es de tipo double
+s 	la variable correspondiente es de tipo string
+b 	la variable correspondiente es un blob y se envía en paquetes
+ *  */

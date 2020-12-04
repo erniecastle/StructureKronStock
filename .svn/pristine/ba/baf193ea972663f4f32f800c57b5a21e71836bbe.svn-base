@@ -1,0 +1,22 @@
+<?php
+
+//Normal configuration
+define('nameweb', 'Kron Stock');
+define('lema', 'Invierte ahora disfruta mañana');
+define('brief', 'es una aplicación que te ayuda a invertir en la Bolsa de valores');
+
+//Social networks
+define('facebook', 'Kronstock');
+define('twitter', 'Kronstock');
+define('instagram', 'Kronstock');
+define('urisite', 'kronstock.com');
+define('googleplus', '110243447833842140382');
+
+//Mail
+define('fromMail', 'Kron Stock');
+define('subjectMail', '¡Es momento de invertir!');
+define('pwMail', 'Busy@2016');
+define('userMail', 'noreply@bulovo.com');
+define('smtpMail', 'smtp.bulovo.com');
+
+

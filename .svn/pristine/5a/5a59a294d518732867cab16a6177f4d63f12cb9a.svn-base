@@ -1,0 +1,375 @@
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Invert now! a Corporate Category Flat Bootstrap Responsive Website Template</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Invert now! Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/smoothbox.css" type='text/css' media="all" />
+<!-- js -->
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- //js -->
+<link href='//fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+</head>
+	
+<body>
+<!-- header -->
+	<div class="header" id="ban">
+		<div class="container">
+			<div class="w3l_social_icons">
+				<ul>
+					<li><a href="#" class="facebook"></a></li>
+					<li><a href="#" class="twitter"></a></li>
+					<li><a href="#" class="google_plus"></a></li>
+					<li><a href="#" class="pinterest"></a></li>
+					<li><a href="#" class="instagram"></a></li>
+				</ul>
+			</div>
+			<div class="w3ls_logo">
+				<h1><a href="index.html">Invert now!</a></h1>
+			</div>
+			<div class="header_right">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-7" id="link-effect-7">
+						<ul class="nav navbar-nav">
+							<li class="act"><a href="index.html" data-hover="Home">Home</a></li>
+							<li><a href="about.html" data-hover="About">About</a></li>
+							<li class="active"><a href="portfolio.html" data-hover="Portfolio">Portfolio</a></li>
+							<li><a href="short-codes.html" data-hover="Short Codes">Short Codes</a></li>
+							<li><a href="mail.html" data-hover="Mail">Mail</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //header -->
+<!-- about -->
+	<div class="about">
+		<div class="container">
+			<h3>Portfolio</h3>
+			<ul>
+				<li><a href="index.html">Home</a><i>|</i></li>
+				<li>Portfolio</li>
+			</ul>
+		</div>
+	</div>
+<!-- //about -->
+<!-- portfolio -->
+	<div class="portfolio">
+		<div class="container">
+			<h3>Our <span>Portfolio</span></h3>
+			<div class="portfolio_grid_w3lss">
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/1.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/1.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/3.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/3.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/11.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/11.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="portfolio_grid_w3lss">
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/12.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/12.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/13.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/13.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/14.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/14.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="portfolio_grid_w3lss">
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/15.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/15.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/16.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/16.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 w3agile_gallery_grid">
+					<div class="w3agile_gallery_image">
+						<a class="sb" href="images/17.jpg" title="quis nostrud exercitation ullamco laboris quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum">
+							<figure>
+								<img src="images/17.jpg" alt="" class="img-responsive" />
+								<figcaption>
+									<h4>Invert now!</h4>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									</p>
+								</figcaption>
+							</figure>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<script type="text/javascript" src="js/smoothbox.jquery2.js"></script>
+		</div>
+	</div>
+<!-- //portfolio -->
+<!-- updates -->
+	<div class="updates-bottom">
+		<div class="container">
+			<div class="col-md-3 w3_updates_bottom_grid">
+				<div class="w3_updates_bottom_grid_left">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				</div>
+				<div class="w3_updates_bottom_grid_right">
+					<p class="counter">886</p> 
+					<h3>Happy Clients</h3>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 w3_updates_bottom_grid">
+				<div class="w3_updates_bottom_grid_left">
+					<span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+				</div>
+				<div class="w3_updates_bottom_grid_right">
+					<p class="counter">652</p> 
+					<h3>Products Level</h3>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 w3_updates_bottom_grid">
+				<div class="w3_updates_bottom_grid_left">
+					<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+				</div>
+				<div class="w3_updates_bottom_grid_right">
+					<p class="counter">886</p> 
+					<h3>Creative Design</h3>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-3 w3_updates_bottom_grid">
+				<div class="w3_updates_bottom_grid_left">
+					<span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
+				</div>
+				<div class="w3_updates_bottom_grid_right">
+					<p class="counter">457</p> 
+					<h3>Popularity</h3>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+			<!-- Starts-Number-Scroller-Animation-JavaScript -->
+				<script src="js/waypoints.min.js"></script> 
+				<script src="js/counterup.min.js"></script> 
+				<script>
+					jQuery(document).ready(function( $ ) {
+						$('.counter').counterUp({
+							delay: 20,
+							time: 1000
+						});
+					});
+				</script>
+
+			<!-- //Starts-Number-Scroller-Animation-JavaScript -->
+		</div>
+	</div>
+<!-- //updates -->
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<h2>Subscribe to <span>Newsletter</span></h2>
+			<form action="#" method="post">
+				<input type="email" name="Email" value="Enter Your Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email...';}" required="">
+				<input type="submit" value="Send">
+			</form>
+		</div>
+	</div>
+	<div class="footer-copy">
+		<div class="container">
+			<div class="w3agile_footer_grids">
+				<div class="col-md-4 w3agile_footer_grid">
+					<h3>About Us</h3>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat 
+						non proident, sunt in culpa qui officia deserunt mollit.</span></p>
+				</div>
+				<div class="col-md-4 w3agile_footer_grid">
+					<h3>Contact Info</h3>
+					<ul>
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+					</ul>
+				</div>
+				<div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
+					<h3>Navigation</h3>
+					<ul>
+						<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="about.html">About Us</a></li>
+						<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="portfolio.html">Portfolio</a></li>
+						<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="short-codes.html">Short Codes</a></li>
+						<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="mail.html">Mail Us</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<div class="copy-right-social">
+		<div class="container">
+			<div class="footer-pos">
+				<a href="#ban" class="scroll"><img src="images/arrow.png" alt=" " class="img-responsive" /></a>
+			</div>
+			<div class="copy-right">
+				<p>Copyright &copy; 2016 Invert now!. All Rights Reserved.</p>
+			</div>
+			<div class="copy-right-social1">
+				<div class="w3l_social_icons w3l_social_icons1">
+					<ul>
+						<li><a href="#" class="facebook"></a></li>
+						<li><a href="#" class="twitter"></a></li>
+						<li><a href="#" class="google_plus"></a></li>
+						<li><a href="#" class="pinterest"></a></li>
+						<li><a href="#" class="instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

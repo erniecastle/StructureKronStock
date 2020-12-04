@@ -1,0 +1,191 @@
+<?php
+
+echo date("h:i:s A") . "<br>";
+include ("designer/query.php");
+include ("designer/functions.php");
+include ("designer/meYahoo.php");
+include ("designer/compareFunctions.php");
+//require_once('Thread.php');
+$loadQ = new query();
+$loadYql = new meYahoo();
+
+//class workerThread extends Thread {
+//
+//    public function __construct($i) {
+//        $this->i = $i;
+//    }
+//
+//    public function run() {
+//        while (true) {
+//            sendMailNotificationStock($tomail, $nameUser, $mailBuy, $mailSell, $mailApBuy, $mailApSell);
+//            sleep(1);
+//        }
+//    }
+//
+//}
+//start here
+$sql = "SELECT * FROM `stocks` order by stockSymbol asc";
+
+$data = $loadQ->select($sql);
+
+$storeStocks = array();
+$notifierInvest = array();
+
+if ($data == false) {
+    echo json_encode("Error getdata() :" . mysql_error());
+} else {
+    if (mysql_num_rows($data) > 0) {
+        $keyStocks = array();
+        while ($row = mysql_fetch_array($data)) {
+            $keyStocks[] = $row["stockSymbol"];
+        }
+        $values = $loadYql->getStocksValues($keyStocks); //YQL
+        if ($values != null) {//Extract stocks and update Last-Price
+            foreach ($values as $row) {//Esto puede tardar
+                $wasUpdate = $loadQ->update("stocks", array('lastPrice' => $row->LastTradePriceOnly), array('stockSymbol' => $row->Symbol));
+                //$wasUpdate = $loadQli->update('stocks', array('lastPrice' => $row->LastTradePriceOnly), array('%d'), array('stockSymbol' => $row->Symbol), array('%s'));
+                if (mysql_affected_rows() > 0) {
+                    $storeStocks[$row->Symbol] = array('lastPrice' => $row->LastTradePriceOnly);
+                }
+                //Read stocks by user verify notifiers and proximity
+                $sql = "SELECT stocks_user.clave as invert,stocks.stockSymbol,stocks_user.buyLimit as priceBuyLimit,stocks_user.purchase as price,"
+                        . "stocks_user.sellLimit as priceSellLimit,stocks_user.appBuy,stocks_user.appSell,"
+                        . "stocks_user.notBuy,stocks_user.notSell,"
+                        . "stocks_user.notAppBuy,stocks_user.notAppSell,"
+                        . "users.clave as keyUser,users.nombre as nameUser,users.email"
+                        . " FROM stocks_user INNER JOIN stocks ON stocks_user.stock_id=stocks.id "
+                        . "INNER JOIN users ON stocks_user.user_id = users.id"
+                        . " WHERE stocks.stockSymbol= '" . $row->symbol . "' ORDER BY stocks_user.id ";
+                $investments = $loadQ->select($sql); //Investments by users
+                if ($investments == false) {
+                    echo json_encode("Error getdata investments():" . mysql_error());
+                } else {
+                    $actualValue = $row->LastTradePriceOnly;
+                    while ($getRow = mysql_fetch_array($investments)) {
+                        $notifier = null;
+                        $noti = ""; //verify notifications and approach
+                        $lastTrade = floatval($row->LastTradePriceOnly);
+                        $pricebuy = $getRow["priceBuyLimit"];
+                        $iBuy = compareFloatNumbers($lastTrade, $pricebuy, '<=');
+                        if ($iBuy) {
+                            if ($getRow["notBuy"]) {
+                                $noti .= "1";
+                            }
+                        }
+                        if (empty($noti)) {
+                            $priceSell = $getRow["priceSellLimit"];
+                            $iSell = compareFloatNumbers($lastTrade, $priceSell, '>=');
+                            if ($iSell) {
+                                if ($getRow["notSell"]) {
+                                    $noti .= "2";
+                                }
+                            }
+                        }
+                        if (empty($noti)) {
+                            $priceAppbuy = $getRow["appBuy"];
+                            if (compareFloatNumbers($priceAppbuy, 100, '<')) {
+                                $pr = $getRow["price"];
+                                $pcd = $getRow["priceBuyLimit"];
+                                $percentage = ($priceAppbuy / 100);
+                                $priceAPPB = $pr - (($pr - $pcd) * ($percentage));
+                                if (compareFloatNumbers($priceAPPB, $lastTrade, '>=')) {
+                                    if ($getRow["notAppBuy"]) {
+                                        $noti .= "3";
+                                    }
+                                }
+                            }
+                        }
+                        if (empty($noti)) {
+                            $priceAppSell = $getRow["appSell"];
+                            if (compareFloatNumbers($priceAppSell, 100, '<')) {
+                                $pr = $getRow["price"];
+                                $pvd = $getRow["priceSellLimit"];
+                                $percentage = ($priceAppSell / 100);
+                                $priceAPPS = $pr + (($pvd - $pr) * ($percentage));
+                                if (compareFloatNumbers($lastTrade, $priceAPPS, '>=')) {
+                                    if ($getRow["notAppSell"]) {
+                                        $noti .= "4";
+                                    }
+                                }
+                            }
+                        }
+                        //ClaveUsuario,NombreUsuario,EmailUser,
+                        //ValorActualStock,ValorCompra,ValorVenta,¿WhatNotifier?
+                        if (!empty($noti)) {
+                            $notifier = array($getRow["keyUser"], $getRow["nameUser"],
+                                $getRow["email"], $row->symbol, $row->Name, $lastTrade,
+                                $getRow["priceBuyLimit"], $getRow["priceSellLimit"], $getRow["invert"],
+                                $noti);
+                            array_push($notifierInvest, $notifier);
+                        }
+                    }
+                }
+            }
+            sort($notifierInvest);
+
+            $i = 0;
+            $total = count($notifierInvest);
+            $stockstoMail = array();
+            $stocksByUser = array();
+            $actualUser = $notifierInvest[0][0];
+            //Divide by user for send mail
+            while ($i <= $total - 1) {
+                if ($actualUser != $notifierInvest[$i][0]) {
+                    array_push($stockstoMail, $stocksByUser);
+                    $stocksByUser = array();
+                    $actualUser = $notifierInvest[$i][0];
+                }
+                array_push($stocksByUser, $notifierInvest[$i]);
+                $i++;
+                if ($i == $total) {
+                    array_push($stockstoMail, $stocksByUser);
+                }
+            }
+
+//               echo '<pre>';
+//                print_r($stockstoMail);
+//                echo '</pre>';
+            //Divide by notification for send mail
+            $mailBuy = array();
+            $mailSell = array();
+            $mailApBuy = array();
+            $mailApSell = array();
+            $totStockUs = count($stockstoMail);
+            for ($row = 0; $row < $totStockUs; $row++) {//Each user in row divide notification
+                for ($pos = 0; $pos < count($stockstoMail[$row]); $pos++) {
+                    if ($stockstoMail[$row][$pos][9] == 1) {
+                        array_push($mailBuy, $stockstoMail[$row][$pos]);
+                    } else if ($stockstoMail[$row][$pos][9] == 2) {
+                        array_push($mailSell, $stockstoMail[$row][$pos]);
+                    } else if ($stockstoMail[$row][$pos][9] == 3) {
+                        array_push($mailApBuy, $stockstoMail[$row][$pos]);
+                    } else if ($stockstoMail[$row][$pos][9] == 4) {
+                        array_push($mailApSell, $stockstoMail[$row][$pos]);
+                    }
+                }
+                $nameUser = $stockstoMail[$row][0][1];
+                $tomail = $stockstoMail[$row][0][2]; //sent mail by kind of notification
+                if (!empty($mailBuy) || !empty($mailSell) || !empty($mailApBuy) || !empty($mailApSell)) {
+                    sendMailNotificationStock($tomail, $nameUser, $mailBuy, $mailSell, $mailApBuy, $mailApSell);
+
+//                    $workers[$i] = new workerThread();
+//                    $workers[$i]->start();
+                }
+
+                $mailBuy = array();
+                $mailSell = array();
+                $mailApBuy = array();
+                $mailApSell = array();
+            }
+        }
+    }
+}
+echo "<br>" . date("h:i:s A");
+
+/*
+i 	la variable correspondiente es de tipo entero
+d 	la variable correspondiente es de tipo double
+s 	la variable correspondiente es de tipo string
+b 	la variable correspondiente es un blob y se envía en paquetes
+ //array('lastPrice' => $row->LastTradePriceOnly, 'otherthing' => 'good');
+ * *  */

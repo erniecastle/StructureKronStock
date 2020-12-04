@@ -1,0 +1,16 @@
+AddType application/x-httpd-php .htm .html
+#AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+#AddOutputFilterByType DEFLATE application/x-httpd-php
+#AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+
+
+
+
+
+     
+
+
+
+
+
+

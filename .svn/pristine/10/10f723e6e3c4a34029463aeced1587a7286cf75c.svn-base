@@ -1,0 +1,198 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+//if (empty($_SESSION['myusername'])) {
+//    header("location:login.html");
+//}
+include ("designer/query.php");
+include ("designer/functions.php");
+$rol = 0;
+$verify = 0;
+
+//phpinfo(); 
+?>
+
+<html>
+    <head>
+        <?php echo '<title>' . nameweb . ' - ' . lema . '</title>'; ?>
+        <meta name="description" content="Skarter es un blog de Moda, Cultura, Sociedad, Vida Saludable, Política, Lujo, Extravagancia, Belleza,                te inspiramos a ser mejor en tu estilo de vida, cada día." />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- <link rel="icon" type="image/png" href="imagesDesign/favicon.png" />-->
+
+        <!-- end google fonts -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+        <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+
+        <script type="text/javascript">
+            $(window).load(function() {
+                ChangeOn(1);
+                ListenMe();
+            });
+        </script>
+    </head>
+    <body>
+        <!-- start header -->
+        <div id="header">
+            <div class="inner">
+                <div class="logo">
+                    <a href="index.html"></a>
+                </div> 
+                <div class="cssmenu">
+                    <ul>
+                        <div class="userLogin">
+                            <a>Bienvenido: <?php echo "Inversionista"; /* $_SESSION["myusername"]; */ ?></a>
+                        </div>
+                        <?php
+//                    if ($rol <= 2) {
+//
+//                        if ($verify > 0) {
+//                            echo'<li title="Notificaciones" class="glove fb" id="notification_li">';
+//                            echo '<span id="notification_count">' . $verify . '</span>';
+//                            echo '<a href="#" id="notificationLink"></a>';
+//                            echo '</li>';
+//                            echo '<div id="notificationContainer">';
+//                            echo '<div id="notificationTitle">Notificaciones</div>';
+//                            echo '<div id="notificationsBody" class="notifications">';
+//                            $registros = getRegisters("select clave from `mainpost` WHERE `mainpost`.showPost=2");
+//                            while ($reg = mysql_fetch_array($registros)) {
+//                                echo '<div id="notifications">Verificar articulo clave: ' . $reg['clave'] . '</div>';
+//                            }
+//                            echo '<div id="notificationFooter"><a href="articulos.php">Verificar articulos</a></div>';
+//                            echo '</div>';
+//                            echo '</div>';
+//                        }
+//                    }
+                        ?>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+            <!-- start menu responsive -->
+            <nav class="clearfix">
+                <ul id="clearfix" class="clearfix">
+                    <li><a href="stocks.php">Listado de acciones</a></li>
+                    <li><a href="mystocks.php">Inversiones</a></li>
+                    <?php
+                    if ($rol < 4) {
+                        echo '<li><a href="">...</a></li>';
+                    }
+                    if ($rol == 1 || $rol == 2 || $rol == 4) {
+
+                        echo ' <li><a href="visitas.html">Visitas</a></li>';
+                        echo ' <li><a  href="medidores.php">KPI\'s</a></li>';
+                        if ($rol <= 2) {
+                            echo ' <li><a href="usuarios.php">Usuarios</a></li>';
+                        }
+                        echo '<li><a href="group.php">Grupos</a></li>';
+                    }
+                    if ($rol < 3) {
+                        //echo '<li><a type="application/rss+xml" href="feed.php">RSS</a></li>';
+                    }
+                    if ($rol == 1) {
+                        echo '<li><a href="userpost.php">Reformar</a></li>';
+                    }
+                    //echo ' <li><a href="pdf/Manualcolaborador.pdf">Manual</a></li>';
+                    ?>
+                    <li><a href="">Cerrar Sesión</a></li>
+                </ul>
+                <a  id="pull">Menu</a>
+            </nav>
+            <!--End menu responsive -->
+        </div>
+        <!--End header-->
+
+    </div>
+    <!-- start main -->
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="main" style="margin-top: 1%;">
+                <div class="content">
+                    <div class="grids_of_2">
+                        <h2 id="content">Asignación de acciones</h2>
+                        <div class="artical-commentbox">
+                            <a class="myButton" style="margin-right: 3%;" href="javascript:void(0);" onclick="ChangeOn(1);
+                                    return false;" >Agregar</a>
+                            <a class="myButton" style="margin-right: 3%;" href="javascript:void(0);" onclick="ChangeOn(2);
+                                    return false;" >Modificar</a>
+                            <a class="myButton" style="margin-right: 3%;" href="javascript:void(0);" onclick="ChangeOn(3);
+                                    return false;" >Eliminar</a>
+                            <br><br><br>
+                        </div>
+                        <a id="mode" value="a"style="font-size: 120%; line-height: 1.5em;">Modo: Agregar</a>
+                        <div class="artical-commentbox" >
+                            <p id="errorComment" class="error-Comment00" style="display: none"></p>
+                            <div id="reply00" class="table-form">
+                                <form id="commentForm" onsubmit="return checkData();"
+                                      enctype="multipart/form-data"
+                                      action="designer/stockFunctions.php" method="post" name="changer">
+                                    <input name="MAX_FILE_SIZE" value="" type="hidden">
+                                    <label>Simbolo de stock: </label>
+                                    <input id="textKey" title="Simbolo de stock" name="textKey" type="textKey" class="textbox" value="" 
+                                           onfocus="if (this.value == 'Clave:') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value == '') {
+                                                       this.value = 'Clave:';
+                                                   }
+                                           " >
+                                    <button id="identifier" title="Busqueda de accion" type="button"  href="javascript:void(0);" onclick="whatDo(1);
+                                            return false;"><img src="images/loupe.png" /></button>
+                                    <br>
+                                    <input id="textTitleStock" name="textTitleStock" type="text" class="textbox" value="Nombre de la compañia" disabled="disabled"
+                                           onfocus="if (this.value === 'Nombre de la compañia') {
+                                                       this.value = '';
+                                                   }"
+                                           onblur="if (this.value === '') {
+                                                       this.value = 'Nombre de la compañia';
+                                                   }">
+                                    <br>
+                                    <div id="kindUp" >
+                                        <input id="imageUpload" name="image" type="file" onchange="readURL(this);" multiple accept='image/*'>
+                                        <button title="Elimina la imagen" type="button" onclick="deleteFile();">Eliminar imagen</button>
+                                        <br><br>
+                                        <img id="imageView" src="imagesDesign/defaultImage.png">
+                                    </div>
+
+                                    <br>
+                                    <input id="workaholic" name="toDo" value="I" type="hidden">
+                                    <input id="alcoholic" name="alcoholic" value="0" type="hidden">
+                                    <input id="takeit" name="takeit" value="" type="hidden">
+                                    <?php
+                                    if ($rol < 3) {
+                                        echo '<input id="myBtnS"  value="Guardar" class="myButton" type="submit"Guardar>';
+                                    }
+                                    ?>
+                                </form>
+                            </div>
+                            <div class="clear"></div>
+                        </div>			
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- start footer -->
+    <div class="wrap">
+        <div class="footer">
+
+            <div class="foot_soc">
+                <ul>
+                    <li><a class="icon1" href="https://instagram.com/<?php echo instagram ?>"></a></li>
+                    <li><a  class="icon2" href="https://www.facebook.com/<?php echo facebook ?>"></a></li>
+                    <li><a  class="icon4" href="https://plus.google.com/<?php echo googleplus ?>"></a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="legend">	
+                <p class="Disegnato">"Invierte ahora, disfruta de tus ganancias mañana" &nbsp; <a href="acercade.html"><?php echo nameweb ?></a></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</body>
+</html>
+
